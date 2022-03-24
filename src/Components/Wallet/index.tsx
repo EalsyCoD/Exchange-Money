@@ -8,10 +8,10 @@ import { useSelector } from 'react-redux'
 import { State } from '../../types'
 
 
-
 const Wallet = (): JSX.Element => {
+  
   const rates = useSelector((state: State) => state.rate.rates)
-
+  console.log(rates)
   return (
     <Box sx={{display: 'flex', marginLeft: 80, maxWidth: 600}}>
         <InputLabel sx={{width: 100,marginTop: -4}}>From</InputLabel>
@@ -21,10 +21,7 @@ const Wallet = (): JSX.Element => {
           labelId="demo-simple-select-label"
           id="demo-simple-select"
             >
-            {/* {Object.keys(rate).map((value, index) => <option key={index} value={rate[value]}>{value}</option>)} */}
-            {Array.isArray(rates) && rates.length &&  rates.map((el, i) => (
-              <option value={el} key={i}>{el}</option>
-            ))}
+            {Object.keys(rates).map((value:any, index) => <option key={index} value={rates[value]}>{value}</option>)}
         </Select>
         <TextField
         variant="filled"  
@@ -38,10 +35,7 @@ const Wallet = (): JSX.Element => {
           labelId="demo-simple-select-label"
           id="demo-simple-select"
         >
-         {/* {Object.keys(rate).map((value, index) => <option key={index} value={rate[value]}>{value}</option>)} */}
-         {Array.isArray(rates) && rates.length && rates.map((el, i) => (
-              <option value={el} key={i}>{el}</option>
-            ))}
+         {Object.keys(rates).map((value:any, index) => <option key={index} value={rates[value]}>{value}</option>)}
         </Select>
         <TextField 
         variant="filled"

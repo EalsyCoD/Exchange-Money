@@ -14,14 +14,12 @@ import Wallet from './Components/Wallet'
 const App = (): JSX.Element => {
  const dispatch = useDispatch()
   useEffect(() => {
-    dispatch(setRate([]))
+    dispatch(setRate(""))
   },[dispatch])
-
   const [theme, setTheme] = React.useState<DefaultTheme>(dark)
   const toggleTheme = () => {
     setTheme(theme.title === 'light' ? dark : light)
   }
-
   return (
     <ThemeProvider theme={theme}>
         <GlobalStyle />

@@ -5,7 +5,6 @@ import { RateState, RateAction } from '../../types'
 
 const initialState: RateState = {
     rates: []
-
 }
 const rateReducer = (
     state: RateState = initialState,
