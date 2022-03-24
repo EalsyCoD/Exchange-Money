@@ -6,6 +6,6 @@ export default {
 
     colors: {
       backgroundColor: 'hsl(0, 2%, 100%);',
-      text: 'hsl(174, 100%, 50%);',
+      text: 'hsl(174, 100%, 0%);',
     },
   }
