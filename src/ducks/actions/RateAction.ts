@@ -12,14 +12,14 @@ const baseUrl: string = `http://data.fixer.io/api/latest?access_key=${apikey}`
 
 
 const setRate = (
-    rates: ""
+rates: []
 ): ThunkAction<void, State, unknown, AnyAction> => {
     return async (dispatch) => {
         try {
             const res = await axios.get(
                 `${baseUrl}${
-                    rates
-                }`
+                   rates 
+        }`
             )
             dispatch({
                 type: 'SET-RATE',

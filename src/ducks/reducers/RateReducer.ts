@@ -4,7 +4,8 @@ import { RateState, RateAction } from '../../types'
 
 
 const initialState: RateState = {
-    rates: []
+    rates: {}
+    
 }
 const rateReducer = (
     state: RateState = initialState,
