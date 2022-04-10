@@ -2,11 +2,12 @@ import { createStore, combineReducers, applyMiddleware } from 'redux'
 import thunk from 'redux-thunk'
 import { composeWithDevTools } from 'redux-devtools-extension'
 import rateReducer from './ducks/reducers/RateReducer'
-import walletReducer from './ducks/reducers/SelectReducer'
+import WalletReducer from './ducks/reducers/WalletReducer'
+
 
 const reducer = combineReducers({
   rate: rateReducer,
-  filter: walletReducer
+  filter: WalletReducer
 })
 
 const store = createStore(reducer, composeWithDevTools(applyMiddleware(thunk)))

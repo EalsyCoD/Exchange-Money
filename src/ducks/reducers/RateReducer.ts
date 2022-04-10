@@ -1,10 +1,9 @@
-
 import { RateState, RateAction } from '../../types' 
 
 
 
 const initialState: RateState = {
-    rates: {}
+    items: []
     
 }
 const rateReducer = (
@@ -13,7 +12,9 @@ const rateReducer = (
 ): RateState => {
     switch(action.type){
         case 'SET-RATE':
-            return action.payload
+            return {
+                items: action.payload.items,
+            }
             default:
                 return state
     }

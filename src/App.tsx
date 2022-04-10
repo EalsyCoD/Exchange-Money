@@ -9,14 +9,14 @@ import { setRate } from './ducks/actions/RateAction'
 import { useDispatch } from 'react-redux'
 
 import Header from './Components/Header'
-import Wallet from './Components/Wallet'
+import Wallets from './Components/Wallet/Wallets'
 
 const App = (): JSX.Element => {
 
  const dispatch = useDispatch()
   useEffect(() => {
-    dispatch(setRate([]))
-  },[dispatch])
+    dispatch(setRate())
+  },[])
 
   const [theme, setTheme] = React.useState<DefaultTheme>(dark)
   const toggleTheme = () => {
@@ -26,7 +26,7 @@ const App = (): JSX.Element => {
     <ThemeProvider theme={theme}>
         <GlobalStyle />
         <Header toggleTheme={toggleTheme} titleTheme={theme.title} />
-        <Wallet />
+        <Wallets />
       </ThemeProvider>
   )
 }
