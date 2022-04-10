@@ -1,22 +1,20 @@
 import React, { useEffect } from 'react';
-
 import { ThemeProvider, DefaultTheme } from 'styled-components'
 import GlobalStyle from './styles/global'
 import light from './styles/themes/light'
 import dark from './styles/themes/dark'
-
-import { setRate } from './ducks/actions/RateAction'
+// import { setRate } from './ducks/actions/RateAction'
+import { setSelect } from './ducks/actions/SelectAction'
 import { useDispatch } from 'react-redux'
-
 import Header from './Components/Header'
-import Wallets from './Components/Wallet/Wallets'
+import Wallet from './Components/Wallet'
 
 const App = (): JSX.Element => {
 
  const dispatch = useDispatch()
   useEffect(() => {
-    dispatch(setRate())
-  },[])
+    dispatch(setSelect(''))
+  },[dispatch])
 
   const [theme, setTheme] = React.useState<DefaultTheme>(dark)
   const toggleTheme = () => {
@@ -26,9 +24,8 @@ const App = (): JSX.Element => {
     <ThemeProvider theme={theme}>
         <GlobalStyle />
         <Header toggleTheme={toggleTheme} titleTheme={theme.title} />
-        <Wallets />
+        <Wallet />
       </ThemeProvider>
   )
 }
-
 export default App;

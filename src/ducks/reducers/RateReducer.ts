@@ -1,10 +1,14 @@
 import { RateState, RateAction } from '../../types' 
 
 
-
 const initialState: RateState = {
-    items: []
-    
+    rates: {
+        AED: 3.994658,
+        AFN: 95.707133,
+        EUR: 1,
+        USD: 1.087583,
+    }
+
 }
 const rateReducer = (
     state: RateState = initialState,
@@ -12,13 +16,9 @@ const rateReducer = (
 ): RateState => {
     switch(action.type){
         case 'SET-RATE':
-            return {
-                items: action.payload.items,
-            }
+            return action.payload
             default:
                 return state
     }
 }
-
-
 export default rateReducer
