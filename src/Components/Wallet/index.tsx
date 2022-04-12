@@ -7,6 +7,7 @@ import Select from '@mui/material/Select';
 import { useSelector } from 'react-redux'
 import { State } from '../../types'
 
+import Charts from '../Сharts/Charts'
 
 const Wallet = (): JSX.Element => {
 const [amount1, setAmount1] = React.useState(1)
@@ -24,23 +25,20 @@ const [currency2, setCurrency2] = React.useState('USD')
     setCurrency1(currency1);
   }
   function handleAmount2Change(amount2: any) {
-    setAmount2(amount2 * rates[currency1] / rates[currency2])
-    setAmount1(amount2);
+    setAmount1(amount2 * rates[currency1] / rates[currency2])
+    setAmount2(amount2);
   }
   function handleCurrency2Change(currency2: any) {
-    setAmount2(amount2 * rates[currency1] / rates[currency2])
-    setCurrency1(currency2);
+    setAmount1(amount2 * rates[currency1] / rates[currency2])
+    setCurrency2(currency2);
   }
   return (
+    <React.Fragment>
     <Box sx={{display: 'flex', marginLeft: 80, maxWidth: 600}}>
         <InputLabel sx={{width: 100,marginTop: -4}}>From</InputLabel>
       <FormControl
            sx={{marginTop: -1.5, marginLeft: -5.5}} fullWidth>
           <Select native 
-          // defaultValue={wallet}
-          // onChange={(e) => {
-          //   dispatch(setSelect(e.target.value))
-          // }}
           defaultValue={currency1}
           onChange={(e) => handleCurrency1Change(e.target.value)}
           labelId="demo-simple-select-label"
@@ -51,10 +49,7 @@ const [currency2, setCurrency2] = React.useState('USD')
         <TextField
         onChange={(e) => handleAmount1Change(e.target.value)}
         value={amount1}
-        // value={currency}
-        // onChange={(e) => {
-        //   dispatch(setCurrency(e.target.value))}}
-        variant="filled"  
+        variant="filled"
         sx={{marginTop: 10, width: 286}}>
         </TextField>
       </FormControl>
@@ -64,10 +59,6 @@ const [currency2, setCurrency2] = React.useState('USD')
         <Select native   
           labelId="demo-simple-select-label"
           id="demo-simple-select"
-          // defaultValue={wallet}
-          // onChange={(e) => {
-          //   dispatch(setSelect(e.target.value))
-          // }}
           defaultValue={currency2}
           onChange={(e) => handleCurrency2Change(e.target.value)}
         >
@@ -79,8 +70,13 @@ const [currency2, setCurrency2] = React.useState('USD')
         variant="filled"
         sx={{marginTop: 10, width: 286}}>
         </TextField>
+        <div style={{display: 'flex'}}>
+        <p style={{fontFamily: 'Space Mono', marginTop: 20, color: 'white'}}> Current rate <br/>{rates[currency1]}</p>
+        </div>
       </FormControl>
     </Box>
+    <Charts />
+    </React.Fragment>
   );
 }
 export default Wallet

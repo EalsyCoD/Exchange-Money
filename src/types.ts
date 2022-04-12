@@ -1,32 +1,29 @@
 export interface State {
-    rate: RateState 
+    rate: RateState
     filter: WalletRootState
-    currency: CurrencyRootState
  }
  
- 
- export type RateState ={
-     rates: any
- 
- }
 
+ export type RateState = {
+     rates: any
+}
+
+export type Wallets = {
+        AED: number,
+        AFN: number,
+        EUR: number,
+        USD: number,
+}
 
  
  export type RateAction = {
      type: string
      payload: RateState
  }
- 
+
  
  export type WalletRootState  = {
      wallet: any
- }
- export type CurrencyRootState  = {
-     currency: any
- }
- export type CurrencyAction  = {
-    type: string
-    payload: CurrencyRootState
  }
  
  export type SelectAction = {

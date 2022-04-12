@@ -8,7 +8,6 @@ const initialState: RateState = {
         EUR: 1,
         USD: 1.087583,
     }
-
 }
 const rateReducer = (
     state: RateState = initialState,
