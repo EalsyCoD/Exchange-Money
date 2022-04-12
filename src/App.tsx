@@ -8,7 +8,7 @@ import { setSelect } from './ducks/actions/SelectAction'
 import { useDispatch } from 'react-redux'
 import Header from './Components/Header'
 import Wallet from './Components/Wallet'
-import Charts from './Components/Сharts/Charts'
+
 
 const App = (): JSX.Element => {
 

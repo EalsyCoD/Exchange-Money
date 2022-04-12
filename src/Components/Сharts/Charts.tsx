@@ -4,52 +4,53 @@ import { useSelector } from 'react-redux'
 import { State } from '../../types'
 
 
-const Charts = (): JSX.Element => {
-  const [currency1] = React.useState('USD')
-  const [currency2] = React.useState('USD')
+const Charts = (currency: any): JSX.Element => {
+
+  // const [currency1, setCurrency1] = React.useState('USD')
+  // const [currency2, setCurrency2] = React.useState('USD')
     const rates = useSelector((state: State) => state.rate.rates)
     const data = [
       {
         "name": "Jan",
-        'USD': rates[currency1] + 0.2,
-        'EUR': rates[currency2] + 0.1,
-        "amt": 50,
+        USD: currency.currency1 + 0.2,
+        EUR: currency.currency2 + 0.1,
+        amt: 50,
       },
       {
         "name": "Feb",
-        "EUR": rates[currency1]+ 0.3,
-        "USD": rates[currency2]+ 0.1,
-        "amt": 50
+        USD: currency.currency1 + 0.3,
+        EUR: currency.currency2+ 0.1,
+        amt: 50
       },
       {
         "name": "Mar",
-        "EUR": rates[currency1]- 0.1,
-        "USD": rates[currency2]- 0.2,
-        "amt": 50
+        USD: currency.currency1- 0.1,
+        EUR: currency.currency2- 0.2,
+        amt: 50
       },
       {
         "name": "Apr",
-        "EUR": rates[currency1]+ 0.05,
-        "USD": rates[currency2]+ 0.01,
-        "amt": 50
+        USD: currency.currency1+ 0.05,
+        EUR: currency.currency2+ 0.01,
+        amt: 50
       },
       {
         "name": "May",
-        "EUR": rates[currency1]+ 0.2,
-        "USD": rates[currency2],
-        "amt": 50
+        USD: currency.currency1+ 0.2,
+        EUR: currency.currency2,
+        amt: 50
       },
       {
         "name": "Jun",
-        "EUR": rates[currency1]+ 0.4,
-        "USD": rates[currency2]+ 0.3,
-        "amt": 40
+        USD: currency.currency1+ 0.32,
+        EUR: currency.currency2+ 0.3,
+        amt: 40
       },
       {
         "name": "Jul",
-        "EUR": rates[currency1],
-        "USD": rates[currency2],
-        "amt": 50
+        USD: currency.currency1 - 0.1,
+        EUR: currency.currency2 - 0.12,
+        amt: 50
       }
     ]
     return(
@@ -62,8 +63,8 @@ const Charts = (): JSX.Element => {
         <YAxis />
         <Tooltip />
         <Legend />
-        <Line type="monotone" dataKey='USD' stroke="#8884d8" />
-        <Line type="monotone" dataKey="EUR" stroke="#82ca9d" />
+        <Line type="monotone" dataKey={currency.currencyFS} stroke="#8884d8" />
+        <Line type="monotone" dataKey={currency.currencyNX} stroke="#82ca9d" />
       </LineChart> 
       </div>
         </React.Fragment>

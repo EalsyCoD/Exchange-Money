@@ -7,6 +7,8 @@ import Select from '@mui/material/Select';
 import { useSelector } from 'react-redux'
 import { State } from '../../types'
 
+import { Rate } from './styles'
+
 import Charts from '../Сharts/Charts'
 
 const Wallet = (): JSX.Element => {
@@ -71,11 +73,11 @@ const [currency2, setCurrency2] = React.useState('USD')
         sx={{marginTop: 10, width: 286}}>
         </TextField>
         <div style={{display: 'flex'}}>
-        <p style={{fontFamily: 'Space Mono', marginTop: 20, color: 'white'}}> Current rate <br/>{rates[currency1]}</p>
+        <Rate>Current rate <br/>{rates[currency1]}</Rate>
         </div>
       </FormControl>
     </Box>
-    <Charts />
+    <Charts currency1={rates[currency1]} currency2={rates[currency2]} currencyFS={currency1} currencyNX={currency2} />
     </React.Fragment>
   );
 }
