@@ -7,7 +7,7 @@ import Select from '@mui/material/Select';
 import { useSelector } from 'react-redux'
 import { State } from '../../types'
 
-import { Rate } from './styles'
+import { Rate, TodayChange } from './styles'
 
 import Charts from '../Сharts/Charts'
 
@@ -74,6 +74,7 @@ const [currency2, setCurrency2] = React.useState('USD')
         </TextField>
         <div style={{display: 'flex'}}>
         <Rate>Current rate <br/>{rates[currency1]}</Rate>
+        {/* <TodayChange>Today's change <br />  </TodayChange> */}
         </div>
       </FormControl>
     </Box>
