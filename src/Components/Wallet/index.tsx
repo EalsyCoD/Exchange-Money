@@ -1,4 +1,4 @@
-import React  from 'react'
+import React, { FC }  from 'react'
 import Box from '@mui/material/Box';
 import InputLabel from '@mui/material/InputLabel';
 import FormControl from '@mui/material/FormControl';
@@ -7,15 +7,17 @@ import Select from '@mui/material/Select';
 import { useSelector } from 'react-redux'
 import { State } from '../../types'
 
-import { Rate, TodayChange } from './styles'
+import { Rate } from './styles'
 
 import Charts from '../Сharts/Charts'
+
 
 const Wallet = (): JSX.Element => {
 const [amount1, setAmount1] = React.useState(1)
 const [amount2, setAmount2] = React.useState(1)
 const [currency1, setCurrency1] = React.useState('USD')
 const [currency2, setCurrency2] = React.useState('USD')
+
   const rates = useSelector((state: State) => state.rate.rates)
 
   function handleAmount1Change(amount1: any) {
@@ -74,7 +76,6 @@ const [currency2, setCurrency2] = React.useState('USD')
         </TextField>
         <div style={{display: 'flex'}}>
         <Rate>Current rate <br/>{rates[currency1]}</Rate>
-        {/* <TodayChange>Today's change <br />  </TodayChange> */}
         </div>
       </FormControl>
     </Box>

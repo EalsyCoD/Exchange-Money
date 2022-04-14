@@ -1,14 +1,18 @@
 import React  from 'react'
 import { CartesianGrid, LineChart, XAxis, YAxis, Tooltip, Legend, Line } from 'recharts';
-import { useSelector } from 'react-redux'
-import { State } from '../../types'
 import { TodayChange, Text } from './styles'
+import { Currency } from '../../types'
 
-const Charts = (currency: any): JSX.Element => {
+interface Props {
+  currency1: number,
+  currency2: number,
+  currencyFS: string,
+  currencyNX: string
+}
 
-  // const [currency1, setCurrency1] = React.useState('USD')
-  // const [currency2, setCurrency2] = React.useState('USD')
-    const rates = useSelector((state: State) => state.rate.rates)
+
+const Charts = (currency: Props): JSX.Element => {
+
     const data = [
       {
         "name": "Jan",

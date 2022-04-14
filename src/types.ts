@@ -5,14 +5,29 @@ export interface State {
  
 
  export type RateState = {
-     rates: any
+    rates: any
+ }
+
+export type Currency = {
+        currency1: number,
+        currency2: number,
+        currencyFS: string,
+        currencyNX: string
 }
 
 export type Wallets = {
         AED: number,
         AFN: number,
         EUR: number,
+        USD: number,   
+}
+
+export type currency = {
+        AED: number,
+        AFN: number,
+        EUR: number,
         USD: number,
+
 }
 
  
@@ -23,7 +38,7 @@ export type Wallets = {
 
  
  export type WalletRootState  = {
-     wallet: any
+     wallet: string
  }
  
  export type SelectAction = {
