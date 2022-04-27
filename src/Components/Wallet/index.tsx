@@ -45,14 +45,14 @@ const Wallet = (): JSX.Element => {
           sx={{ marginTop: -1.5, marginLeft: -5.5 }} fullWidth>
           <Select native
             defaultValue={currency1}
-            onChange={(e) => handleCurrency1Change(e.target.value as any)}
+            onChange={(e) => handleCurrency1Change(e.target.value as ERates)}
             labelId="demo-simple-select-label"
             id="demo-simple-select"
           >
             {Object.keys(rates).map((value, i) => <option key={i} value={value}>{value}</option>)}
           </Select>
           <TextField
-            onChange={(e) => handleAmount1Change(e.target.value as any)}
+            onChange={(e) => handleAmount1Change(e.target.value as unknown as number)}
             value={amount1}
             variant="filled"
             sx={{ marginTop: 10, width: 286 }}>
@@ -65,12 +65,12 @@ const Wallet = (): JSX.Element => {
             labelId="demo-simple-select-label"
             id="demo-simple-select"
             defaultValue={currency2}
-            onChange={(e) => handleCurrency2Change(e.target.value as any)}
+            onChange={(e) => handleCurrency2Change(e.target.value as ERates)}
           >
             {Object.keys(rates).map((value, i) => <option key={i} value={value}>{value}</option>)}
           </Select>
           <TextField
-            onChange={(e) => handleAmount2Change(e.target.value as any)}
+            onChange={(e) => handleAmount2Change(e.target.value as unknown as number)}
             value={amount2}
             variant="filled"
             sx={{ marginTop: 10, width: 286 }}>
