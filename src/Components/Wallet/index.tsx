@@ -1,16 +1,16 @@
-import React, { FC } from 'react'
+import React from 'react'
 import Box from '@mui/material/Box';
 import InputLabel from '@mui/material/InputLabel';
 import FormControl from '@mui/material/FormControl';
 import TextField from '@mui/material/TextField';
 import Select from '@mui/material/Select';
-import { useDispatch, useSelector } from 'react-redux'
+import { useSelector } from 'react-redux'
 import { ERates, State } from '../../types'
 
 import { Rate } from './styles'
 
 import Charts from '../Сharts/Charts'
-import { setSelect } from '../../ducks/actions/SelectAction';
+import { Button } from '@mui/material';
 
 const Wallet = (): JSX.Element => {
 
@@ -57,6 +57,7 @@ const Wallet = (): JSX.Element => {
             variant="filled"
             sx={{ marginTop: 10, width: 286 }}>
           </TextField>
+          <Button sx={{ marginTop: 1 }} variant="contained">Swap Wallets</Button>
         </FormControl>
         <InputLabel sx={{ width: 100, marginTop: -4, marginLeft: 3 }}>To</InputLabel>
         <FormControl

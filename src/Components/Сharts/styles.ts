@@ -6,12 +6,11 @@ export const TodayChange = styled.p`
   height: 20px;
   margin: -40px 100px 0 0;
   text-align: right;
-  color: ${(props) => props.theme.colors.text};
   letter-spacing: 1px;
 
 & img {
   height: 8px;
-  margin: -20px 0 0 -100px;
+  margin: -20px 0 0 -110px;
 }
 
 `
@@ -24,5 +23,8 @@ margin-right: 100px;
   top: 26px;
   right: -110px;
   height: 8px;
+}
+& {
+  color: var(--${(props) => props.color})
 }
 `
