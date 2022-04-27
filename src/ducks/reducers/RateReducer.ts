@@ -1,4 +1,5 @@
-import { RateState, RateAction } from '../../types' 
+import { RateState, RateAction } from '../../types'
+
 
 
 const initialState: RateState = {
@@ -14,11 +15,11 @@ const rateReducer = (
     state: RateState = initialState,
     action: RateAction
 ): RateState => {
-    switch(action.type){
+    switch (action.type) {
         case 'SET-RATE':
             return action.payload
-            default:
-                return state
+        default:
+            return state
     }
 }
 export default rateReducer
