@@ -1,12 +1,32 @@
 export interface State {
-   rate: RateState 
-   filter: WalletRootState
+    rate: RateState
+    filter: WalletRootState
 }
 
 
-export type RateState ={
-    rates: any
-    
+export type RateState = {
+    rates: { [key in ERates]: number }
+}
+
+export enum ERates {
+    AED = 'AED',
+    AFN = 'AFN',
+    EUR = 'EUR',
+    USD = 'USD'
+}
+
+export type Wallets = {
+    AED: number
+    AFN: number
+    EUR: number,
+    USD: number
+}
+
+export type Currency = {
+    currency1: number,
+    currency2: number,
+    currencyFS: string,
+    currencyNX: string
 }
 
 export type RateAction = {
@@ -15,7 +35,7 @@ export type RateAction = {
 }
 
 
-export type WalletRootState  = {
+export type WalletRootState = {
     wallet: string
 }
 

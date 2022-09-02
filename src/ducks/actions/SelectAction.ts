@@ -4,14 +4,14 @@ import { State } from '../../types'
 
 
 const setSelect = (
-    wallet: string
+    wallet: string,
   ): ThunkAction<void, State, unknown, AnyAction> => {
-    return async (dispatch, getState) => {
-  
+    return async (dispatch) => {
+
       dispatch({
         type: 'SET-WALLET-FILTER',
         payload: {
-          wallet,
+          wallet
         },
       })
     }

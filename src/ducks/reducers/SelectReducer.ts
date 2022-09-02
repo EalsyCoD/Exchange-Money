@@ -12,11 +12,11 @@ const FilterReducer = (
     case 'SET-WALLET-FILTER':
       return {
         ...state,
-        wallet: action.payload.wallet
+        wallet: action.payload.wallet,
       }
       default:
           return state
-      
+
     }
 }
 

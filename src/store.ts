@@ -6,9 +6,8 @@ import walletReducer from './ducks/reducers/SelectReducer'
 
 const reducer = combineReducers({
   rate: rateReducer,
-  filter: walletReducer
+  filter: walletReducer,
 })
 
 const store = createStore(reducer, composeWithDevTools(applyMiddleware(thunk)))
-
 export default store

@@ -1,6 +1,12 @@
 import { createGlobalStyle } from 'styled-components'
 
 export default createGlobalStyle`
+
+:root {
+  --Green: hsl(163, 72%, 41%);
+  --Red: hsl(356, 69%, 56%);
+}
+
   * {
     margin: 0;
     padding: 0;
