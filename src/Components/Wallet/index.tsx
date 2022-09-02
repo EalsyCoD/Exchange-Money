@@ -62,7 +62,9 @@ const Wallet = (): JSX.Element => {
             variant="filled"
             sx={{ marginTop: 10, width: 286 }}
           ></TextField>
-          {/* <Button sx={{ marginTop: 1 }} variant="contained">Swap Wallets</Button> */}
+          <Button sx={{ marginTop: 1 }} variant="contained">
+            Swap Wallets
+          </Button>
         </FormControl>
         <InputLabel sx={{ width: 100, marginTop: -4, marginLeft: 3 }}>
           To
